@@ -1,0 +1,18 @@
+# Data
+data/*.csv
+data/*.xlsx
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Model files
+*.cbm
+*.pkl
+*.model
+
+# Mac
+.DS_Store
