@@ -1,4 +1,4 @@
-**Hybrid CatBoost–SARIMAX Framework for AQI Prediction**
+**Hybrid CatBoost–SARIMAX Framework for Daily AQI Forecasting in Indian Metropolitan Cities**
 
 **Overview**
 This project implements a hybrid machine learning and time-series framework for daily Air Quality Index (AQI) forecasting across major Indian metropolitan cities.
@@ -91,13 +91,13 @@ Performance comparison performed between:
 
 Residual diagnostics and ACF plots included for transparency and validation.
 
-**Repository Structure**
+## Repository Structure
 
 AQI-Hybrid-CatBoost-SARIMAX/
 │
-├── city_data/                  # City-wise processed CSV files
-├── AQI_Hybrid_Model.ipynb      # Google Colab notebook
-├── results/                    # Output plots and comparison tables
+├── city_data/              # City-wise processed CSV files
+├── AQI_Hybrid_Model.ipynb  # Google Colab notebook
+├── results/                # Output plots and comparison tables
 └── README.md
 
 **How to Run (Google Colab)**
@@ -115,6 +115,18 @@ AQI-Hybrid-CatBoost-SARIMAX/
 -Update DATA_FOLDER path
 
 -Run cells sequentially
+
+## Results Summary
+
+Performance comparison between CatBoost and Hybrid (CatBoost + SARIMAX):
+
+- In most cities, CatBoost achieved strong R² scores (0.74 – 0.97).
+- Hybrid modeling showed marginal improvements in some cities.
+- In cities with low residual autocorrelation, hybrid gains were negligible.
+- This suggests that nonlinear pollutant interactions dominate AQI prediction, while residual temporal structure is limited in some regions.
+
+Overall observation:
+CatBoost alone performs competitively, and hybrid modeling is beneficial only when residual autocorrelation is significant.
 
 **Key Highlights**
 
@@ -140,3 +152,8 @@ Tripti Singh
 B.Tech Computer Science and Engineering
 Hybrid Machine Learning Research in Air Quality Forecasting
 
+## Ethical Note
+
+This repository presents results exactly as obtained from the implemented pipeline.
+No manual performance adjustments or metric manipulation were performed.
+The focus is on methodological transparency and reproducibility.
