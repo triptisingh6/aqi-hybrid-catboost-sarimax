@@ -128,6 +128,24 @@ Performance comparison between CatBoost and Hybrid (CatBoost + SARIMAX):
 Overall observation:
 CatBoost alone performs competitively, and hybrid modeling is beneficial only when residual autocorrelation is significant.
 
+## Example Visualizations
+
+### Delhi — Actual vs CatBoost Prediction
+
+![Delhi Actual vs CatBoost](results/delhi_actual_vs_catboost.png)
+
+---
+
+### Delhi — Residual Autocorrelation (ACF)
+
+![Delhi Residual ACF](results/delhi_residual_acf.png)
+
+---
+
+### Model Performance Comparison Across Cities
+
+![Model Comparison](results/model_comparison.png)
+
 **Key Highlights**
 
 -Time-series aware train-test splitting (no data leakage)
@@ -157,3 +175,4 @@ Hybrid Machine Learning Research in Air Quality Forecasting
 This repository presents results exactly as obtained from the implemented pipeline.
 No manual performance adjustments or metric manipulation were performed.
 The focus is on methodological transparency and reproducibility.
+
