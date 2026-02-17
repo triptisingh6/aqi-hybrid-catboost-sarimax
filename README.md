@@ -1,5 +1,10 @@
 **Hybrid CatBoost–SARIMAX Framework for Daily AQI Forecasting in Indian Metropolitan Cities**
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![CatBoost](https://img.shields.io/badge/Model-CatBoost-green)
+![SARIMAX](https://img.shields.io/badge/TimeSeries-SARIMAX-orange)
+![Status](https://img.shields.io/badge/Status-Research%20Project-brightgreen)
+
 **Overview**
 This project implements a hybrid machine learning and time-series framework for daily Air Quality Index (AQI) forecasting across major Indian metropolitan cities.
 
@@ -175,4 +180,5 @@ Hybrid Machine Learning Research in Air Quality Forecasting
 This repository presents results exactly as obtained from the implemented pipeline.
 No manual performance adjustments or metric manipulation were performed.
 The focus is on methodological transparency and reproducibility.
+
 
