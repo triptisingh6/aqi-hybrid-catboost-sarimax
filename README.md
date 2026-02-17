@@ -1,138 +1,142 @@
-Hybrid CatBoost–SARIMAX Framework for AQI Prediction
-Overview
+**Hybrid CatBoost–SARIMAX Framework for AQI Prediction**
 
+**Overview**
 This project implements a hybrid machine learning and time-series framework for daily Air Quality Index (AQI) forecasting across major Indian metropolitan cities.
 
 The model combines:
 
-CatBoost Regressor for nonlinear pollutant interaction modeling
+-CatBoost Regressor for nonlinear pollutant interaction modeling
 
-SARIMAX for capturing temporal autocorrelation in residuals
+-SARIMAX for capturing temporal autocorrelation in residuals
 
 The goal is to build a transparent, reproducible, and research-oriented AQI forecasting pipeline using CPCB air quality data.
 
-Cities Covered
+**Cities Covered**
 
-Delhi
+- Delhi
 
-Mumbai
+- Mumbai
 
-Kolkata
+- Kolkata
 
-Chennai
+- Chennai
 
-Jaipur
+- Jaipur
 
-Bengaluru
+- Bengaluru
 
 These cities were selected to represent diverse urban characteristics including traffic intensity, industrial activity, climatic diversity, and coastal versus inland conditions.
 
-Data Source
+**Data Source**
 
 Daily air quality and meteorological data were obtained from:
 
-Central Pollution Control Board (CPCB)
+- Central Pollution Control Board (CPCB)
 
-State Pollution Control Boards (SPCBs)
+- State Pollution Control Boards (SPCBs)
 
-Data Processing Steps
+**Data Processing Steps**
 
-Station-wise CSV files aggregated into city-level datasets
+-Station-wise CSV files aggregated into city-level datasets
 
-Non-numeric entries removed
+-Non-numeric entries removed
 
-Missing values handled using forward-fill and median imputation
+-Missing values handled using forward-fill and median imputation
 
-Continuous daily date range enforced
+-Continuous daily date range enforced
 
-Outliers capped using IQR method
+-Outliers capped using IQR method
 
-Time-series features engineered (lags, rolling means, calendar features)
+-Time-series features engineered (lags, rolling means, calendar features)
 
-Modeling Framework
-1. CatBoost Model
+**Modeling Framework**
 
-Learns nonlinear relationships between pollutants and AQI
+**1. CatBoost Model**
 
-Handles complex feature interactions automatically
+-Learns nonlinear relationships between pollutants and AQI
 
-Time-based 80–20 train-test split
+-Handles complex feature interactions automatically
 
-Early stopping applied to prevent overfitting
+-Time-based 80–20 train-test split
 
-2. Residual Analysis
+-Early stopping applied to prevent overfitting
 
-Residuals from CatBoost analyzed using Autocorrelation Function (ACF)
+**2. Residual Analysis**
 
-Significant autocorrelation checked before applying hybrid modeling
+-Residuals from CatBoost analyzed using Autocorrelation Function (ACF)
 
-3. Hybrid Model
+-Significant autocorrelation checked before applying hybrid modeling
 
-SARIMAX trained on CatBoost residuals
+**3. Hybrid Model**
 
-Weekly seasonality considered (m = 7)
+-SARIMAX trained on CatBoost residuals
 
-Final prediction:
+-Weekly seasonality considered (m = 7)
+
+**Final prediction:**
 
 Hybrid Prediction = CatBoost Prediction + SARIMAX Residual Forecast
 
-Evaluation Metrics
+**Evaluation Metrics**
 
-RMSE (Root Mean Squared Error)
+-RMSE (Root Mean Squared Error)
 
-R² Score
+-R² Score
 
 Performance comparison performed between:
 
-CatBoost
+-CatBoost
 
-Hybrid (CatBoost + SARIMAX)
+-Hybrid (CatBoost + SARIMAX)
 
 Residual diagnostics and ACF plots included for transparency and validation.
 
-Repository Structure
+**Repository Structure**
+
 AQI-Hybrid-CatBoost-SARIMAX/
 │
 ├── city_data/                  # City-wise processed CSV files
 ├── AQI_Hybrid_Model.ipynb      # Google Colab notebook
 ├── results/                    # Output plots and comparison tables
 └── README.md
-How to Run (Google Colab)
 
-Upload city-wise CSV files to Google Drive
+**How to Run (Google Colab)**
 
-Open the notebook in Google Colab
+-Upload city-wise CSV files to Google Drive
 
-Install dependencies:
+-Open the notebook in Google Colab
+
+-Install dependencies:
 
 !pip install catboost
 
-Mount Google Drive
+-Mount Google Drive
 
-Update DATA_FOLDER path
+-Update DATA_FOLDER path
 
-Run cells sequentially
+-Run cells sequentially
 
-Key Highlights
+**Key Highlights**
 
-Time-series aware train-test splitting (no data leakage)
+-Time-series aware train-test splitting (no data leakage)
 
-Residual autocorrelation testing before hybrid modeling
+-Residual autocorrelation testing before hybrid modeling
 
-City-level independent modeling
+-City-level independent modeling
 
-Reproducible Google Colab pipeline
+-Reproducible Google Colab pipeline
 
-Transparent model comparison
+-Transparent model comparison
 
-Research Focus
+**Research Focus**
 
 This project explores hybrid modeling approaches that combine gradient boosting and statistical time-series models for environmental forecasting.
 
 The emphasis is on reproducibility, methodological clarity, and honest performance evaluation.
 
-Author
+**Author**
 
 Tripti Singh
 B.Tech Computer Science and Engineering
 Hybrid Machine Learning Research in Air Quality Forecasting
+
